@@ -1,13 +1,13 @@
 version: 0.1
 
-phases:
+hases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION)
-      - export AWS_ACCOUNT_ID=$(aws ec2 describe-security-groups --group-names 'Default' --query 'SecurityGroups[0].OwnerId' --output text)
-      - export IMAGE_REPO_NAME="pianka"
-      - export IMAGE_TAG="latest"
+      - AWS_ACCOUNT_ID=$(aws ec2 describe-security-groups --group-names 'Default' --query 'SecurityGroups[0].OwnerId' --output text)
+      - IMAGE_REPO_NAME="pianka"
+      - IMAGE_TAG="latest"
 
   build:
     commands:
