@@ -1,6 +1,6 @@
 version: 0.1
 
-hases:
+phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
